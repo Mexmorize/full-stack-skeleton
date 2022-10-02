@@ -86,24 +86,28 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
       <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
         <Stack alignItems="center" spacing={3} sx={{ pt: 5, borderRadius: 2, position: 'relative' }}>
-          <Box
+          {/* <Box
             component="img"
             src="/static/illustrations/illustration_avatar.png"
             sx={{ width: 100, position: 'absolute', top: -50 }}
-          />
+          /> */}
 
           <Box sx={{ textAlign: 'center' }}>
             <Typography gutterBottom variant="h6">
-              Curious about the API?
+              Curious about back-end?
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              This app uses GraphQL/PostGreSQL
+              This app uses GraphQL and PostGreSQL for queries, and Django as the MVC.
             </Typography>
           </Box>
-
           <Button href="http://localhost:8000/graphql/" target="_blank" variant="contained">
             Go to GraphQL API
           </Button>
+
+          <Button href="http://localhost:8000/admin/" target="_blank" variant="contained">
+            Go to Django Admin
+          </Button>
+          
         </Stack>
       </Box>
     </Scrollbar>
