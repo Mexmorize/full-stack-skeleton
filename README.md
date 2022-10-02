@@ -96,7 +96,7 @@ grant all privileges on database postgres to postgres
 <br />
 
 ```
-cd ui
+cd frontend
 
 npm install
 

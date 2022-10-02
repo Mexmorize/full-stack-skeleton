@@ -3,6 +3,7 @@ version: "3.6"
 
 services:
   db:
+      container_name: data-collection-pg-database-backend
       image: 'postgres'
       ports:
         - '5432'
@@ -13,9 +14,10 @@ services:
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
   core:
+    container_name: data-collection-django-core
     build:
       context: .
-      dockerfile: Dockerfile-api
+      dockerfile: Dockerfile-backend
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - '8000:8000'
@@ -28,17 +30,17 @@ services:
     networks:
       some_network:
 
-  client:
+  frontend:
     stdin_open: true
-    container_name: world-api-ui
+    container_name: data-collection-react-frontend
     build:
       context: .
-      dockerfile: Dockerfile-ui
+      dockerfile: Dockerfile-frontend
     ports:
       - "3000:3000"
     volumes:
       - "/app/node_modules"
-      - "./ui/:/app"
+      - "./frontend/:/app"
       
 networks:
   some_network:
