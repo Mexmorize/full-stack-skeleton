@@ -84,8 +84,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
       <Box sx={{ flexGrow: 1 }} />
 
-      <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
-        <Stack alignItems="center" spacing={3} sx={{ pt: 5, borderRadius: 2, position: 'relative' }}>
+      <Box sx={{ px: 2.5, pb: 3, mt: 0 }}>
+        <Stack alignItems="center" spacing={2} sx={{ pt: 5, borderRadius: 2, position: 'relative' }}>
           {/* <Box
             component="img"
             src="/static/illustrations/illustration_avatar.png"
@@ -97,13 +97,15 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
               Curious about back-end?
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              This app uses GraphQL and PostGreSQL for queries, and Django as the MVC.
+              This app uses a variety of modern tools such as Django, Docker, GraphQL, PgAdmin, PostGreSQL, and React.
             </Typography>
           </Box>
           <Button href="http://localhost:8000/graphql/" target="_blank" variant="contained">
             Go to GraphQL API
           </Button>
-
+          <Button href="http://localhost:5433/browser/" target="_blank" variant="contained">
+            Go to PgAdmin
+          </Button>
           <Button href="http://localhost:8000/admin/" target="_blank" variant="contained">
             Go to Django Admin
           </Button>
