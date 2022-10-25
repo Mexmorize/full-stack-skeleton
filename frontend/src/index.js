@@ -4,22 +4,37 @@ import 'simplebar/src/simplebar.css';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+//
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client/react';
+import { createUploadLink } from 'apollo-upload-client';
 
 //
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
+import React from 'react';
+
+//
+const cache = new InMemoryCache();
+const uri = 'http://localhost:8000/graphql';
+const link = createUploadLink({ uri });
+const client = new ApolloClient({ cache, link });
 
 // ----------------------------------------------------------------------
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <HelmetProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </HelmetProvider>
+  <React.StrictMode>
+    <HelmetProvider>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ApolloProvider>
+    </HelmetProvider>
+  </React.StrictMode>
 );
 
 // If you want to enable client cache, register instead.
