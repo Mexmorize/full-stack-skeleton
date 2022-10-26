@@ -1,11 +1,10 @@
 name: PR Title Check
 on:
-  pull_request:
+  pull_request_target:
     types:
-      # Check title when opened.
       - opened
-      # Check title when new commits are pushed.
-      # Required to use as a status check.
+      - reopened
+      - edited
       - synchronize
 
 jobs:
@@ -13,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: dylanvann/check-pull-request-title@v0.1.14
+      - uses: Slashgear/action-check-pr-title@2.0.0
         with:
-          # Match pull request titles in the form AB#1234 title.
-          pattern: '^AB#[0-9]{4}'
+          regex: '^AB#[0-9]{4}'
