@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.1.2...v0.2.0) (2022-10-26)
+
+
+### Features
+
+* Checking branch name ([2bc6581](https://github.com/Mexmorize/full-stack-skeleton/commit/2bc6581072025be0335ce534e5b9585e88067880))
+
+
+
 ## [0.1.2](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.1.1...v0.1.2) (2022-10-26)
 
 
