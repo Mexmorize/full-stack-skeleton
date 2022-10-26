@@ -1,6 +1,6 @@
 name: PR Title Check
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - reopened
@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
       - uses: Slashgear/action-check-pr-title@2.0.0
         with:
           regex: '^AB#[0-9]{4}'
