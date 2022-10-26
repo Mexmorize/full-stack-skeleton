@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: dylanvann/check-pull-request-title@v1
+      - uses: dylanvann/check-pull-request-title@v0.1.14
         with:
           # Match pull request titles in the form AB#1234 title.
           pattern: '^AB#[0-9]{4}'
