@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.3.0...v0.4.0) (2022-10-27)
+
+
+### Features
+
+* added husky to use and check commit lint ([a7823f3](https://github.com/Mexmorize/full-stack-skeleton/commit/a7823f31b1b76eee314c2d025af64d071a5c54e8))
+
+
+
 # [0.3.0](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.2.0...v0.3.0) (2022-10-27)
 
 
