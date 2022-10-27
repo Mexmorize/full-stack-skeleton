@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.2.0...v0.3.0) (2022-10-27)
+
+
+### Features
+
+* Work on PR title checking ([95eb583](https://github.com/Mexmorize/full-stack-skeleton/commit/95eb5836f9852f25b4a082dd3f79449ec95534f7))
+
+
+
 # [0.2.0](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.1.2...v0.2.0) (2022-10-26)
 
 
