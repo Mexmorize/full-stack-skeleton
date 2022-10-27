@@ -1,3 +1,12 @@
+## [0.4.2](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.4.1...v0.4.2) (2022-10-27)
+
+
+### Bug Fixes
+
+* **git:** cached and removed gitignored files ([62a03cf](https://github.com/Mexmorize/full-stack-skeleton/commit/62a03cf80012079b4644a2892002c80e2e8fcbcf))
+
+
+
 ## [0.4.1](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.4.0...v0.4.1) (2022-10-27)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * Checking branch name ([2bc6581](https://github.com/Mexmorize/full-stack-skeleton/commit/2bc6581072025be0335ce534e5b9585e88067880))
-
-
-
-## [0.1.2](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.1.1...v0.1.2) (2022-10-26)
-
-
-### Bug Fixes
-
-* Trying new release.yml file ([70856e0](https://github.com/Mexmorize/full-stack-skeleton/commit/70856e0ec13567248cd8a269c9636eb758a1789a))
 
 
 
