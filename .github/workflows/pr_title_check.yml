@@ -13,6 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: Slashgear/action-check-pr-title@3.0.0
+      - uses: deepakputhraya/action-pr-title@master
         with:
-          regex: '^AB#[0-9]{4}'
+          regex: '^[fF]ix(es|ed)?\sAB#[0-9]{4}'
