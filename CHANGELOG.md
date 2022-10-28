@@ -1,3 +1,12 @@
+## [0.4.3](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.4.2...v0.4.3) (2022-10-28)
+
+
+### Bug Fixes
+
+* **docs:** installed husky and updated docs try this again ([38c19f3](https://github.com/Mexmorize/full-stack-skeleton/commit/38c19f3a73c051ec51c91d325f55cab62f980860))
+
+
+
 ## [0.4.2](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.4.1...v0.4.2) (2022-10-27)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * Work on PR title checking ([95eb583](https://github.com/Mexmorize/full-stack-skeleton/commit/95eb5836f9852f25b4a082dd3f79449ec95534f7))
-
-
-
-# [0.2.0](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.1.2...v0.2.0) (2022-10-26)
-
-
-### Features
-
-* Checking branch name ([2bc6581](https://github.com/Mexmorize/full-stack-skeleton/commit/2bc6581072025be0335ce534e5b9585e88067880))
 
 
 
