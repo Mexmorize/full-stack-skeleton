@@ -1,5 +1,5 @@
 # Coding Challenge
-Challenging myself!
+Always learning and challenging myself!
 
 Method 1:
 ## Setting up using Docker
