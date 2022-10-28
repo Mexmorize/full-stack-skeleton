@@ -1,5 +1,5 @@
 # Coding Challenge
-Testing and showing Github Actions Again
+Cleaning Coding Challenge text
 
 Method 1:
 ## Setting up using Docker
