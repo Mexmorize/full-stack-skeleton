@@ -1,6 +1,5 @@
 # Coding Challenge
-GraphQL API in Django
-  - Nisha Chaube
+Testing and showing Github Actions Again
 
 Method 1:
 ## Setting up using Docker
