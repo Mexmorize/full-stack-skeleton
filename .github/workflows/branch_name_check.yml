@@ -15,12 +15,7 @@ jobs:
 
       - name: Checking current branch name
         run: |
-          if [[ "${{ steps.branch-name.outputs.current_branch }}" =~ ^[0-9]{4}- ]]; then
-              echo ::set-output name=match::true
-          fi
-
-      - name: Testing branch name
-        if: steps.check-branch.outputs.match != 'true'
-        run: |
-          echo "::error::The branch name is invalid, must start with 4 numbers and a dash. Such as, 1234-"
-          exit 1
+          if ! [[ "${{ steps.branch-name.outputs.current_branch }}" =~ ^[0-9]{4}- ]]; then
+            echo "::error::The branch name is invalid, must start with 4 numbers and a dash. Such as, 1234-"
+            exit 1
+          fi  
