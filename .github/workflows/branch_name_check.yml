@@ -22,5 +22,5 @@ jobs:
       - name: Testing branch name
         if: steps.check-branch.outputs.match != 'true'
         run: |
-          echo "::error::The branch name is invalid, must start with 4 numbers and a dash. Such as, 1234-"
+          echo "The branch name is invalid, must start with 4 numbers and a dash. Such as, 1234-"
           exit 1
