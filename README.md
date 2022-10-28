@@ -1,5 +1,5 @@
 # Coding Challenge
-Cleaning Coding Challenge text
+Challenging myself!
 
 Method 1:
 ## Setting up using Docker
