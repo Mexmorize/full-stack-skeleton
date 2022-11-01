@@ -12,6 +12,13 @@
 
 
 
+## [0.5.0](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.4.4...v0.5.0) (2022-11-01)
+
+
+### Features
+
+* **GitHub Actions:** implementing release-please ([#16](https://github.com/Mexmorize/full-stack-skeleton/issues/16)) ([e864e91](https://github.com/Mexmorize/full-stack-skeleton/commit/e864e91f92e2e6cbf8d0e4ab75cbaea3c39ede6c))
+
 ## [0.4.3](https://github.com/Mexmorize/full-stack-skeleton/compare/v0.4.2...v0.4.3) (2022-10-28)
 
 
@@ -45,6 +52,3 @@
 ### Features
 
 * added husky to use and check commit lint ([a7823f3](https://github.com/Mexmorize/full-stack-skeleton/commit/a7823f31b1b76eee314c2d025af64d071a5c54e8))
-
-
-
