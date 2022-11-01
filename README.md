@@ -1,5 +1,6 @@
 # Coding Challenge
 Always learning and challenging myself!!!
+Hopefully things get more automated :)
 
 Method 1:
 ## Setting up using Docker
