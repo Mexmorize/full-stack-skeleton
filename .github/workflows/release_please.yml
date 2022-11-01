@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
+          version-file: './frontend/package.json'
           release-type: node
           package-name: release-please-action
-          version-file: './frontend/package.json'
