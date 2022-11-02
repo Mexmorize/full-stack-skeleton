@@ -2,6 +2,10 @@
 Always learning and challenging myself!!!
 Hopefully things get more automated :)
 
+# What is being done in the newest change
+Trying a single commit with squash merge
+to test release-please functionality
+
 Method 1:
 ## Setting up using Docker
 Note: Below steps may take some time
