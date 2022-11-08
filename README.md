@@ -6,8 +6,8 @@ Get a 'new' front-end that uses TSX rather than JS (still react hopefully)
 Update README file more to better reflect current build
 
 # What is being done in the newest change
-Trying a single commit with squash merge
-to test release-please functionality
+Uninstalled Husky
+Retrying the Google API release-please GitHub action with squash and merge
 
 Method 1:
 ## Setting up using Docker
