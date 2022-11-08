@@ -1,10 +1,9 @@
 # Coding Challenge
-Always learning and challenging myself!!!
-Hopefully things get more automated :)
+To build a complete full-stack application template to be used in various projects
 
 # What is being done in the newest change
-Trying a single commit with squash merge
-to test release-please functionality
+Uninstalled Husky
+Retrying the Google API release-please GitHub action with squash and merge
 
 Method 1:
 ## Setting up using Docker
