@@ -3,7 +3,7 @@ To build a complete full-stack application template to be used in various projec
 
 # TODO
 Get a 'new' front-end that uses TSX rather than JS (still react hopefully)
-Update README file more to better reflect current build
+
 
 # What is being done in the newest change
 Uninstalled Husky
