@@ -4,6 +4,10 @@ on:
   pull_request:
     types: ['opened', 'edited', 'reopened', 'synchronize']
 
+# Action should have write permission to make updates to PR
+permissions:
+  pull-requests: write
+
 jobs:
   check_pr_branch:
     runs-on: ubuntu-latest
