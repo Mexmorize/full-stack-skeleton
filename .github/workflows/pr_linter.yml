@@ -5,15 +5,13 @@ on:
     types: ['opened', 'edited', 'reopened', 'synchronize']
 
 jobs:
-  title:
-    name: ticket check
+  gitlint:
     runs-on: ubuntu-latest
-
+    name: GitLint
     steps:
-      - name: Check for ticket
-        uses: neofinancial/ticket-check-action@v1
+      - name: Lint commits, branches, and pull requests
+        uses: aschbacd/gitlint-action@v1.1.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          titleRegex: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)'
-          branchRegex: '^[0-9]{4}-'
-          bodyRegex: '^[fF]ix(es|ed)?\sAB#[0-9]{4}'
+          re-branch-name: '^[0-9]{4}-'
+          re-commit-message-body: '^[fF]ix(es|ed)?\sAB#[0-9]{4}'
+          re-pull-request-title: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)'
