@@ -12,7 +12,7 @@ jobs:
       - name: Lint commits, branches, and pull requests
         uses: aschbacd/gitlint-action@v1.1.0
         with:
-          commit-message-subject-max-length: 200
+          commit-message-subject-max-length: 100
           re-branch-name: '^[0-9]{4}-'
           re-pull-request-title: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)'
 
