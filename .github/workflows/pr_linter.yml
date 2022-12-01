@@ -5,7 +5,7 @@ on:
     types: ['opened', 'edited', 'reopened', 'synchronize']
 
 jobs:
-  check_pr_branch_and_title:
+  check_pr_branch:
     runs-on: ubuntu-latest
     name: GitLint
     steps:
@@ -17,19 +17,11 @@ jobs:
           re-branch-name: '^[0-9]{4}-'
           re-pull-request-title: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)'
 
-  check_pr_comment:
+  check_pr_title_and_body:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions-ecosystem/action-regex-match@v2
-        id: regex-match
+      - uses: mtfoley/pr-compliance-action@main
         with:
-          text: ${{ github.event.comment.body }}
-          regex: '^[fF]ix(es|ed)?\sAB#[0-9]{4}'
-
-      - uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ steps.regex-match.outputs.match != '' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: ${{ steps.regex-match.outputs.group1 }}
+          title-check-enable: true
+          body-regex: '^[fF]ix(es|ed)?\sAB#[0-9]{4}'
+          body-comment: 'Please reference the Azure Boards work item ID. Refer to the CONTRIBUTING.md file for more information.'
