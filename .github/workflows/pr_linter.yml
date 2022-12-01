@@ -5,7 +5,7 @@ on:
     types: ['opened', 'edited', 'reopened', 'synchronize']
 
 jobs:
-  gitlint:
+  check_pr_branch_and_title:
     runs-on: ubuntu-latest
     name: GitLint
     steps:
