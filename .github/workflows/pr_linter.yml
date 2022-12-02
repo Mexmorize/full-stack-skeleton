@@ -11,7 +11,7 @@ permissions:
 jobs:
   check_pr_branch_and_title:
     runs-on: ubuntu-latest
-    name: GitLint
+    name: Check branch and title
     steps:
       - name: Lint commits, branches, and pull requests
         uses: aschbacd/gitlint-action@v1.1.0
@@ -23,6 +23,7 @@ jobs:
 
   add_pr_description:
     runs-on: ubuntu-latest
+    name: Add AB link to PR
     permissions:
       pull-requests: write
     steps:
@@ -30,9 +31,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           add_markdown: |
-            ---
-
-            # Things!
-            ## Excitement!
-            [Links!](https://google.ca)
-            `Code!`
+            Fixed AB#${{ steps.branch-name.outputs.current_branch }}
