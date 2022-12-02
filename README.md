@@ -6,8 +6,7 @@ Get a 'new' front-end that uses TSX rather than JS (still react hopefully)
 okay lets try again
 
 # What is being done in the newest change
-Uninstalled Husky
-Retrying the Google API release-please GitHub action with squash and merge
+Re-doing how the CI/CD is done to get release-please to work as needed.
 
 Method 1:
 ## Setting up using Docker

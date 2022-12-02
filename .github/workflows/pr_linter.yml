@@ -1,0 +1,36 @@
+name: Pull Request Lint
+
+on:
+  pull_request:
+    types: ['opened', 'edited', 'reopened', 'synchronize']
+
+jobs:
+  pr_linter:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Lint branch name and PR title
+        uses: aschbacd/gitlint-action@v1.1.0
+        with:
+          commit-message-subject-max-length: 100
+          re-commit-message-subject: .*
+          re-branch-name: '^[0-9]{4}-'
+          re-pull-request-title: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)'
+
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6
+      
+      - name: Running on a pull request branch.
+        id: extract_branch
+        if: steps.branch-name.outputs.is_default == 'false'
+        run: |
+          echo "Running on pr: ${{ steps.branch-name.outputs.current_branch }}"
+          echo "##[set-output name=branch;]${{ steps.branch-name.outputs.current_branch }}"
+        
+      - uses: DerekRoberts/action-pr-description-add@v0.0.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          add_markdown: |
+            Fixed AB#${{ steps.extract_branch.outputs.branch }}
