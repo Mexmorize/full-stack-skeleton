@@ -4,31 +4,25 @@ on:
   pull_request:
     types: ['opened', 'edited', 'reopened', 'synchronize']
 
-# Action should have write permission to make updates to PR
-permissions:
-  pull-requests: write
-
 jobs:
-  check_pr_branch_and_title:
+  pr_linter:
     runs-on: ubuntu-latest
-    name: Check branch and title
+    permissions:
+      pull-requests: write
     steps:
-      - name: Lint commits, branches, and pull requests
+      - name: Lint branch name and PR title
         uses: aschbacd/gitlint-action@v1.1.0
         with:
           commit-message-subject-max-length: 100
           re-commit-message-subject: .*
           re-branch-name: '^[0-9]{4}-'
           re-pull-request-title: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)'
-
-  add_pr_description:
-    runs-on: ubuntu-latest
-    name: Add AB link to PR
-    permissions:
-      pull-requests: write
-    steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - uses: DerekRoberts/action-pr-description-add@v0.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           add_markdown: |
-            Fixed AB#${{ steps.branch-name.outputs.current_branch }}
+            Fixed AB#${{ steps.extract_branch.outputs.branch }}
