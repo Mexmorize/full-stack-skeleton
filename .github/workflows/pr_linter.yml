@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  check_pr_branch:
+  check_pr_branch_and_title:
     runs-on: ubuntu-latest
     name: GitLint
     steps:
@@ -21,11 +21,18 @@ jobs:
           re-branch-name: '^[0-9]{4}-'
           re-pull-request-title: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)'
 
-  check_pr_title_and_body:
+  add_pr_description:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
-      - uses: mtfoley/pr-compliance-action@main
+      - uses: DerekRoberts/action-pr-description-add@v0.0.2
         with:
-          title-check-enable: true
-          body-regex: '^[fF]ix(es|ed)?\sAB#[0-9]{4}'
-          body-comment: 'Please reference the Azure Boards work item ID. Refer to the CONTRIBUTING.md file for more information.'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          add_markdown: |
+            ---
+
+            # Things!
+            ## Excitement!
+            [Links!](https://google.ca)
+            `Code!`
