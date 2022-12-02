@@ -21,19 +21,14 @@ jobs:
       - name: Get branch name
         id: branch-name
         uses: tj-actions/branch-names@v6
-        
-      - name: Running on the default branch.
-        if: steps.branch-name.outputs.is_default == 'true'
-        run: |
-          echo "Running on default: ${{ steps.branch-name.outputs.current_branch }}"
-        # Outputs: "Running on default: main".
       
       - name: Running on a pull request branch.
+        id: extract_branch
         if: steps.branch-name.outputs.is_default == 'false'
         run: |
           echo "Running on pr: ${{ steps.branch-name.outputs.current_branch }}"
-        # Outputs: "Running on pr: feature/test".
-
+          echo "##[set-output name=branch;]${{ steps.branch-name.outputs.current_branch }}"
+        
       - uses: DerekRoberts/action-pr-description-add@v0.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
