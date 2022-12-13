@@ -28,3 +28,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           add_markdown: Fixed AB#${{ env.env_branch_name }}
+
+      - name: PR Body regex tester
+        id: body_checker
+        uses: mtfoley/pr-compliance-action@main
+        with:
+          body-regex: Fixed (\[?)AB#(.*)
+          body-auto-close: false
