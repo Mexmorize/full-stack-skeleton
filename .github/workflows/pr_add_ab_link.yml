@@ -1,0 +1,38 @@
+name: Pull Request Lint
+
+on:
+  pull_request:
+    types: ['opened']
+
+jobs:
+  pr_linter:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6
+      
+      - name: Running on a pull request branch.
+        if: steps.branch-name.outputs.is_default == 'false'
+        run: |
+          echo "env_branch_name=${{ steps.branch-name.outputs.current_branch }}" >> $GITHUB_ENV
+          local_branch_name=${{ steps.branch-name.outputs.current_branch }}
+          regex='^[0-9]{4}-' 
+          if [[ $local_branch_name =~ $regex ]]; then echo 'branch matched regex!'; else echo 'branch did not match regex!!!' && exit 1; fi
+
+      - name: PR Body regex tester
+        id: body_checker
+        uses: mtfoley/pr-compliance-action@main
+        with:
+          body-regex: Fixed (\[?)AB#(.*)
+          body-auto-close: false
+
+      - if: ${{ steps.body_checker.outputs.body-check == 'false' }}
+        name: Add AB link in PR description
+        uses: DerekRoberts/action-pr-description-add@v0.0.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          add_markdown: Fixed AB#${{ env.env_branch_name }}
