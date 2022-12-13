@@ -1,7 +1,7 @@
-name: Bug Report
-description: File a bug report
-title: ":bug: [Fix]: "
-labels: ["bug", "triage"]
+name: DevOps Update
+description: File a DevOps update request
+title: ":construction_worker: [DevOps]: "
+labels: ["devops", "triage"]
 assignees:
   - Mexmorize
 body:

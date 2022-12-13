@@ -1,7 +1,7 @@
-name: Bug Report
-description: File a bug report
-title: ":bug: [Fix]: "
-labels: ["bug", "triage"]
+name: Documentation Update
+description: File a documentation update request
+title: ":memo: [Docs]: "
+labels: ["docs", "triage"]
 assignees:
   - Mexmorize
 body:

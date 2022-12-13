@@ -1,7 +1,7 @@
-name: Bug Report
-description: File a bug report
-title: ":bug: [Fix]: "
-labels: ["bug", "triage"]
+name: Feature Update
+description: File a feature update request
+title: ":sparkles: [Feat]: "
+labels: ["feat", "triage"]
 assignees:
   - Mexmorize
 body:

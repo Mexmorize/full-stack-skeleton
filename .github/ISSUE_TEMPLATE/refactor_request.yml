@@ -1,7 +1,7 @@
-name: Bug Report
-description: File a bug report
-title: ":bug: [Fix]: "
-labels: ["bug", "triage"]
+name: Refactor Request
+description: File a refactor update request
+title: ":recycle: [Refactor]: "
+labels: ["refactor", "triage"]
 assignees:
   - Mexmorize
 body:
