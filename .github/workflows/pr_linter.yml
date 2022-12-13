@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "env_branch_name=${{ steps.branch-name.outputs.current_branch }}" >> $GITHUB_ENV
           local_branch_name=${{ steps.branch-name.outputs.current_branch }}
-          regex='^[0-9]{4}-' 
+          regex='^[0-9]{4}-'
           if [[ $local_branch_name =~ $regex ]]; then echo 'branch matched regex!'; else echo 'branch did not match regex!!!' && exit 1; fi
 
       - name: PR JSON information
@@ -36,9 +36,13 @@ jobs:
           # Only return if PR is not in draft state. (By default it returns PRs in any state.)
           filterOutDraft: true
 
-      - run: echo "PR ${prNumber} ${prTitle} at ${prUrl} is ${prJSON}"
-        id: set-env
+      - name: Parse out JSON
+        id: parse-json
         if: steps.PR.outcome == 'success' && steps.PR.outputs.pr
+        run: |
+          echo "PR ${prNumber} ${prTitle} at ${prUrl} is ${prJSON}"
+          regex='Fixed (\[?)AB#(.*)'
+          if [[ ${prBody} =~ $regex ]]; then echo 'prBody matched regex!'; else echo 'prBody does not match regex, please add the Azure Board reference!!!' && exit 1; fi
         env:
           # JSON object with the full PR object
           # toJSON(fromJSON(...pr)) parses it into memory and then format is with pretty-print.
@@ -52,11 +56,3 @@ jobs:
           prMergedAt: ${{ steps.PR.outputs.pr_merged_at }}
           prClosedAt: ${{ steps.PR.outputs.pr_closed_at }}
           prLabel: ${{ steps.PR.outputs.pr_labels }}
-
-      # - if: ${{ steps.set-env.outputs.body-check == 'false' }}
-      - name: Add AB link in PR description
-        run: echo "${{ steps.PR.outputs.pr_body }}" && "[[ "${{ steps.PR.outputs.pr_body }}" =~ Fixed (\[?)AB#(.*) ]]"
-        # uses: DerekRoberts/action-pr-description-add@v0.0.2
-        # with:
-        #   github_token: ${{ secrets.GITHUB_TOKEN }}
-        #   add_markdown: Fixed AB#${{ env.env_branch_name }}
