@@ -5,7 +5,7 @@ To build a complete full-stack application template to be used in various projec
 Get a 'new' front-end that uses TSX rather than JS
 
 # What is being done in the newest change
-Got actions to work properly, now to test other GitHub functionalities
+Actions should be working as intended now
 
 Method 1:
 ## Setting up using Docker
