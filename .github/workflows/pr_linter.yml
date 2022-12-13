@@ -23,7 +23,7 @@ jobs:
           regex='^[0-9]{4}-'
           if [[ $local_branch_name =~ $regex ]]; then echo 'branch matched regex!'; else echo 'branch did not match regex!!!' && exit 1; fi
 
-      - name: PR JSON information
+      - name: Get PR JSON information
         uses: 8BitJonny/gh-get-current-pr@2.2.0
         id: PR
         with:
@@ -40,9 +40,9 @@ jobs:
         id: parse-json
         if: steps.PR.outcome == 'success' && steps.PR.outputs.pr
         run: |
-          echo "PR ${prNumber} ${prTitle} at ${prUrl} is ${prJSON}"
           regex='Fixed (\[?)AB#(.*)'
           if [[ ${prBody} =~ $regex ]]; then echo 'prBody matched regex!'; else echo 'prBody does not match regex, please add the Azure Board reference!!!' && exit 1; fi
+          echo "Here is all the PR JSON information ${prNumber} ${prTitle} at ${prUrl} is ${prJSON}"
         env:
           # JSON object with the full PR object
           # toJSON(fromJSON(...pr)) parses it into memory and then format is with pretty-print.
