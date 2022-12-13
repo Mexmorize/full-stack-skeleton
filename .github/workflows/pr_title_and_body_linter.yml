@@ -22,7 +22,7 @@ jobs:
           # Only return if PR is not in draft state. (By default it returns PRs in any state.)
           filterOutDraft: true
 
-      - name: Parse out JSON
+      - name: Parse out JSON to check prTitle and prBody
         id: parse-json
         if: steps.PR.outcome == 'success' && steps.PR.outputs.pr
         run: |
