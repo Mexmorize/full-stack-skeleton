@@ -5,7 +5,7 @@ on:
     types: ['opened']
 
 jobs:
-  pr_linter:
+  branch_and_ab:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write

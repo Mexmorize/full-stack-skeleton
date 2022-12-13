@@ -3,10 +3,9 @@ To build a complete full-stack application template to be used in various projec
 
 # TODO
 Get a 'new' front-end that uses TSX rather than JS (still react hopefully)
-okay lets try again
 
 # What is being done in the newest change
-Re-doing how the CI/CD is done to get release-please to work as needed.
+Got actions to work properly, now to test other GitHub functionalities
 
 Method 1:
 ## Setting up using Docker
