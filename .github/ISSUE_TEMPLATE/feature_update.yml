@@ -1,6 +1,6 @@
-name: Feature Update
+name: 🚀 Feature Update
 description: File a feature update request
-title: ":sparkles: [Feat]: "
+title: "[Feat]: "
 labels: ["feat", "triage"]
 assignees:
   - Mexmorize

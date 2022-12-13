@@ -1,6 +1,6 @@
-name: Refactor Request
+name: ♻️ Refactor Request
 description: File a refactor update request
-title: ":recycle: [Refactor]: "
+title: "[Refactor]: "
 labels: ["refactor", "triage"]
 assignees:
   - Mexmorize

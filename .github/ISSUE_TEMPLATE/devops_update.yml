@@ -1,6 +1,6 @@
-name: DevOps Update
+name: 👷 DevOps Update
 description: File a DevOps update request
-title: ":construction_worker: [DevOps]: "
+title: "[DevOps]: "
 labels: ["devops", "triage"]
 assignees:
   - Mexmorize
