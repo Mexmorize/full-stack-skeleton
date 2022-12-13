@@ -2,7 +2,7 @@
 To build a complete full-stack application template to be used in various projects
 
 # TODO
-Get a 'new' front-end that uses TSX rather than JS (still react hopefully)
+Get a 'new' front-end that uses TSX rather than JS
 
 # What is being done in the newest change
 Got actions to work properly, now to test other GitHub functionalities
