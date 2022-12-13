@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: Sleep for 5 seconds
+        run: sleep 5s
+        shell: bash
+
       - name: Get PR JSON information
         uses: 8BitJonny/gh-get-current-pr@2.2.0
         id: PR
