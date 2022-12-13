@@ -55,7 +55,7 @@ jobs:
 
       # - if: ${{ steps.set-env.outputs.body-check == 'false' }}
       - name: Add AB link in PR description
-        run: echo "${prBody}"
+        run: env
         # uses: DerekRoberts/action-pr-description-add@v0.0.2
         # with:
         #   github_token: ${{ secrets.GITHUB_TOKEN }}
