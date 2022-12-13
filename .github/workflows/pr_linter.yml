@@ -55,7 +55,7 @@ jobs:
 
       # - if: ${{ steps.set-env.outputs.body-check == 'false' }}
       - name: Add AB link in PR description
-        run: echo "${{ steps.PR.outputs.pr_body }}" && "[[ ${{ steps.PR.outputs.pr_body }} =~ Fixed (\[?)AB#(.*) ]]"
+        run: echo "${{ steps.PR.outputs.pr_body }}" && "[[ "${{ steps.PR.outputs.pr_body }}" =~ Fixed (\[?)AB#(.*) ]]
         # uses: DerekRoberts/action-pr-description-add@v0.0.2
         # with:
         #   github_token: ${{ secrets.GITHUB_TOKEN }}
