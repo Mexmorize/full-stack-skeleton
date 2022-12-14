@@ -1,7 +1,7 @@
 name: 📝 Documentation Update
 description: File a documentation update request
 title: "[Docs]: "
-labels: ["docs", "triage"]
+labels: ["Type: Documentation"]
 assignees:
   - Mexmorize
 body:

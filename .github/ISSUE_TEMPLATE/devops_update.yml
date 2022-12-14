@@ -1,7 +1,7 @@
 name: 👷 DevOps Update
 description: File a DevOps update request
 title: "[DevOps]: "
-labels: ["devops", "triage"]
+labels: ["Type: DevOps"]
 assignees:
   - Mexmorize
 body:

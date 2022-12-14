@@ -1,7 +1,7 @@
 name: 🚀 Feature Update
 description: File a feature update request
 title: "[Feat]: "
-labels: ["feat", "triage"]
+labels: ["Type: Feature"]
 assignees:
   - Mexmorize
 body:
