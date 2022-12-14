@@ -1,7 +1,7 @@
-name: 🐛 Bug Report
-description: Create a bug report to help us improve
-title: "[Fix]: "
-labels: ["Type: Bug"]
+name: ❓ I have a Question
+description: Need help? This is the way to get it!
+title: "[Question]: "
+labels: ["Good First Issue"]
 assignees:
   - Mexmorize
 body:

@@ -1,5 +1,5 @@
-name: 🚀 Feature Update
-description: File a feature update request
+name: 🚀 Feature Implementation/Update
+description: Suggest an idea
 title: "[Feat]: "
 labels: ["Type: Feature"]
 assignees:

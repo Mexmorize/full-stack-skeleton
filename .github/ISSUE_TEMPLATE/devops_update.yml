@@ -1,5 +1,5 @@
-name: 👷 DevOps Update
-description: File a DevOps update request
+name: 👷 DevOps
+description: Updating the CI/CD pipelines
 title: "[DevOps]: "
 labels: ["Type: DevOps"]
 assignees:

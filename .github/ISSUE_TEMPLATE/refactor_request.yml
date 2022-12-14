@@ -1,5 +1,5 @@
 name: ♻️ Refactor Request
-description: File a refactor update request
+description: Something that needs improving while not changing functionality
 title: "[Refactor]: "
 labels: ["Type: Refactor"]
 assignees:

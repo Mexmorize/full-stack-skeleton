@@ -1,5 +1,5 @@
-name: 📝 Documentation Update
-description: File a documentation update request
+name: 📝 Documentation
+description: Updating documentation (eg. README, Wiki, Guides, etc.)
 title: "[Docs]: "
 labels: ["Type: Documentation"]
 assignees:
