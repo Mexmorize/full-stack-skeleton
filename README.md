@@ -1,4 +1,4 @@
-# Coding Challenge
+# **Coding Challenge**
 To build a complete full-stack application template to be used in various projects
 
 # TODO
